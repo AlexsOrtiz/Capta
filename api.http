@@ -1,0 +1,42 @@
+### API de Días Hábiles - Colombia
+### Usar extensión REST Client en VSCode para ejecutar estos requests
+
+### 1. Test básico - Sumar 1 hora
+GET http://localhost:3000/calculate?hours=1&date=2025-01-24T22:00:00.000Z
+
+###
+
+### 2. Sumar días y horas
+GET http://localhost:3000/calculate?days=1&hours=4&date=2025-01-21T20:00:00.000Z
+
+###
+
+### 3. Usar hora actual
+GET http://localhost:3000/calculate?days=2
+
+###
+
+### 4. Jornada completa (8 horas)
+GET http://localhost:3000/calculate?hours=8&date=2025-01-20T13:00:00.000Z
+
+###
+
+### 5. Test de validación - Sin parámetros (debe dar error)
+GET http://localhost:3000/calculate
+
+###
+
+### 6. Test de validación - Parámetro negativo (debe dar error)
+GET http://localhost:3000/calculate?hours=-1
+
+###
+
+### 7. Health check
+GET http://localhost:3000/health
+
+###
+
+### 8. Ejemplo con festivos (17-18 abril)
+GET http://localhost:3000/calculate?days=5&hours=4&date=2025-04-10T15:00:00.000Z
+
+###
