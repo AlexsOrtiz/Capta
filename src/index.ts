@@ -133,10 +133,12 @@ app.use((_req: Request, res: Response): void => {
   });
 });
 
-// Iniciar el servidor
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Example: http://localhost:${PORT}/calculate?days=1&hours=2`);
-});
+// Iniciar el servidor solo si no está en Vercel (desarrollo local)
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Example: http://localhost:${PORT}/calculate?days=1&hours=2`);
+  });
+}
 
 export default app;
